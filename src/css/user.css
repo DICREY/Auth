@@ -1,0 +1,99 @@
+.user-profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-profile-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .user-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #f0f0f0;
+    margin-bottom: 1rem;
+  }
+  
+  .user-name {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    color: #333;
+  }
+  
+  .user-nickname {
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+  }
+  
+  .user-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  .info-icon {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 0.2rem;
+  }
+  
+  .info-item label {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.2rem;
+  }
+  
+  .info-item p {
+    margin: 0;
+    color: #333;
+  }
+  
+  .user-id {
+    word-break: break-all;
+    font-size: 0.8rem;
+  }
+  
+  .verification-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 0.3rem;
+  }
+  
+  .verification-badge.verified {
+    background-color: #e6f7ee;
+    color: #28a745;
+  }
+  
+  .verification-badge.unverified {
+    background-color: #ffebee;
+    color: #dc3545;
+  }
+  
+  .metadata {
+    font-size: 0.7rem;
+    background: #f0f0f0;
+    padding: 0.5rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    max-height: 150px;
+  }
