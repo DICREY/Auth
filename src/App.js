@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+// Librarys
+import React from 'react'
+import { useAuth0 } from '@auth0/auth0-react'
+import { Routes,Route, BrowserRouter } from 'react-router-dom'
 
-function App() {
+// Imports
+import { Main } from './Component/main'
+import './App.css'
+
+// Main component 
+export const App = () => {
+  // Vars
+  const { isLoading, error } = useAuth0()
+
+  // Verify if there is error 
+  if (error) {
+    return <div>Oops... {error.message}</div>
+  }
+  
+  // Verify if is loading
+  if (isLoading) {
+    return <p>Loading...</p>
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Routes>
+        {/* <Route path="/" exact component={} /> */}
+        <Route path="/" element={<Main />} />
+        <Route path="*" component={<p>Not Found</p>} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
-
-export default App;
