@@ -21,6 +21,7 @@ export const Main = () => {
                     </div>
                     <div className="user-info">
                         <h3 className="user-greeting">¡Hola, {user.name}!</h3>
+                        
                     </div>
                 </div>
             )}
