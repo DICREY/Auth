@@ -15,9 +15,13 @@ export const App = () => {
   const { isAuthenticated, isLoading, error } = useAuth0()
 
   // Make private route
-  const PrivateRoute = ({ element, ...rest }) => {
-    return isAuthenticated ? element : <Navigate to="/" replace />;
-  };
+  const PrivateRoute = ({ children }) => {
+    if (isLoading) {
+      return <div>Loading...</div>
+    }
+  
+    return isAuthenticated ? children : <Navigate to="/" replace />
+  }
 
   // Verify if there is error 
   if (error) {
@@ -32,13 +36,13 @@ export const App = () => {
   return (
     <BrowserRouter>
       <Nav />
-
       <Routes>
-
         <Route path="/" element={<Main />} />
         <Route 
               path="/user" 
-              element={<PrivateRoute element={<UserProfile />} />} 
+              element={<PrivateRoute>
+                <UserProfile />
+              </PrivateRoute>} 
             />
         <Route path="*" component={<p>Not Found</p>} />
       </Routes>

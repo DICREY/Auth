@@ -1,16 +1,18 @@
-import { useAuth0 } from '@auth0/auth0-react';
-import React from 'react';
-import { FiHome}  from 'react-icons/fi';
+// Librarys 
+import { useAuth0 } from '@auth0/auth0-react'
+import React from 'react'
+import { FiHome }  from 'react-icons/fi'
 
 // Imports
-import '../css/nav.css';
+import '../css/nav.css'
 import { LoginButton } from './Login'
 import { LogoutButton } from './Logout'
 
 // Main component 
 export const Nav = () => {
     // Vars 
-    const { isAuthenticated, user } = useAuth0();
+    const { isAuthenticated, user, isLoading, error } = useAuth0()
+    console.log("Estado auth:", { isAuthenticated, user, isLoading, error });
 
     return (
         <nav className="navbar">
@@ -43,5 +45,5 @@ export const Nav = () => {
                 )}
             </div>
         </nav>
-    );
-};
+    )
+}

@@ -1,20 +1,20 @@
 // Librarys 
-import React from 'react';
-import { useAuth0 } from '@auth0/auth0-react';
+import React from 'react'
+import { useAuth0 } from '@auth0/auth0-react'
 
 // Imports
 import '../css/user.css'
 
 // Main component
 export const UserProfile = () => {
-  const { user } = useAuth0();
+  const { user } = useAuth0()
 
   // Formatear fecha de creación (si está disponible)
   const formatDate = (dateString) => {
-    if (!dateString) return 'No disponible';
-    const date = new Date(dateString);
-    return date.toLocaleDateString();
-  };
+    if (!dateString) return 'No disponible'
+    const date = new Date(dateString)
+    return date.toLocaleDateString()
+  }
 
   return (
     <main className="user-profile-container">
@@ -67,5 +67,5 @@ export const UserProfile = () => {
         )}
       </section>
     </main>
-  );
-};
+  )
+}
