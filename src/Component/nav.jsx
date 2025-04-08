@@ -18,9 +18,9 @@ export const Nav = () => {
         <nav className="navbar">
             
             <div className="nav-links">
-                <a href="/main" className="nav-link">
+                <a href="/" className="nav-link">
                 <FiHome className="nav-icon" />
-                <span>Inicio</span>
+                <span>Home</span>
                 </a>
                 
                 {isAuthenticated && (
@@ -31,7 +31,7 @@ export const Nav = () => {
                             alt="Profile" 
                             className="nav-user-avatar" 
                         />
-                        <span>Mi Perfil</span>
+                        <span>My Profile</span>
                     </a>
                 </>
                 )}

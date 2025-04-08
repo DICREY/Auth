@@ -5,14 +5,14 @@ import { useAuth0} from "@auth0/auth0-react"
 // Main component 
 export const Main = () => {
     // Vars 
-    const { isAuthenticated } = useAuth0()
+    const { isAuthenticated, user } = useAuth0()
 
     return (
         <span>
+            <p>Greeting...</p>
             {
-                isAuthenticated && (
-                    <p>Greeting Hola Usuario</p>
-                )
+                <p>Hola {isAuthenticated?user.name:"Usuario"}</p>
+                
             }
         </span>
     )
