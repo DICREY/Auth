@@ -14,6 +14,12 @@ export const App = () => {
   // Vars
   const { isAuthenticated, isLoading, error } = useAuth0()
 
+  // Componente para rutas de admin
+  // const AdminRoute = ({ children }) => {
+  //   const isAdmin = isAuthenticated && user['https://auth0.com/user_metadata']?.includes('Admin');
+  //   return isAdmin ? children : <Navigate to="/" replace />;
+  // };
+
   // Make private route
   const PrivateRoute = ({ children }) => {
     if (isLoading) {
@@ -44,6 +50,12 @@ export const App = () => {
                 <UserProfile />
               </PrivateRoute>} 
             />
+        {/* <Route 
+              path="/admin" 
+              element={<AdminRoute>
+                <p>Eres Admin</p>
+              </AdminRoute>} 
+            /> */}
         <Route path="*" component={<p>Not Found</p>} />
       </Routes>
     </BrowserRouter>

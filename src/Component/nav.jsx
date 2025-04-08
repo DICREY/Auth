@@ -14,6 +14,12 @@ export const Nav = () => {
     const { isAuthenticated, user, isLoading, error } = useAuth0()
     console.log("Estado auth:", { isAuthenticated, user, isLoading, error });
 
+    // Admin 
+    // const isAdmin = () => {
+    //     user['dev-w615bude3b5w3rej.us.auth0.com']?.includes('Admin')
+        
+    // }
+
     return (
         <nav className="navbar">
             
@@ -33,6 +39,7 @@ export const Nav = () => {
                         />
                         <span>My Profile</span>
                     </a>
+                    
                 </>
                 )}
             </div>
