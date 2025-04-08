@@ -7,8 +7,10 @@
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 body {
   display: flex;
+  flex-direction: column;
   place-content: center;
   place-items: center;
   height: 100vh;

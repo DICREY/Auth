@@ -25,8 +25,8 @@ export const App = () => {
 
   return (
     <BrowserRouter>
+      <Nav />
       <Routes>
-        {/* <Route path="/" exact component={} /> */}
         <Route path="/" element={<Main />} />
         <Route path="/main" element={<Main />} />
         <Route path="*" component={<p>Not Found</p>} />
