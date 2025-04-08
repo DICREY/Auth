@@ -5,12 +5,14 @@ import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react"
 // Main component 
 export const Main = () => {
     // Vars 
-    const { user } = useAuth0()
+    const { user, isAuthenticated } = useAuth0()
 
     return (
         <span>
-            <p>Greeting Hola</p>
-            {/* <p>Greeting Hola {user.name}</p> */}
+            <p>Greeting Hola {
+            isAuthenticated?user.name:
+            "Usuario"
+            }</p>
         </span>
     )
 }
